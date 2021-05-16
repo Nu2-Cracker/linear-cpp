@@ -29,10 +29,12 @@ int main() {
 
     // We're going to read as much input as the user gives us, and then take the
     // average.
-    while (std::cin >> x) {
+    while (count < 5) {
         // count += 1 is the same thing as count = count + 1.  We need to count
         // how many numbers the user gave us, or we won't know what to divide by
         // to get the average.
+
+        std::cin >> x;
         count += 1;
         total += x;
     }

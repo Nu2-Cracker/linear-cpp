@@ -25,25 +25,32 @@
  * provides, and then finds the index of the greatest and least elements.
  */
 
+/*
+*C++のプログラムでベクトル内の最低と最高を求めるプログラム
+
+*/
 #include <iostream>
 // We don't use strings in this example, but we do need to include vector to use
 // vectors.
 #include <vector>
 
 int main() {
-    int x;
+    int x, count=0;
     // Just like with std::string, if we don't specify the starting value for
     // the vector it will be empty.
     std::vector<int> v;
 
     std::cout << "Enter as many numbers as you want:\n";
-    while (std::cin >> x) {
+    while (count < 3) {
         // push_back adds an element at the end of the vector.  This means that
         // all existing values stay where they were, and the new value has the
         // highest index.  push_front, on the other hand, puts the new element
         // at index 0 and moves the rest up; it can be useful, but is much
         // slower.
+
+        std::cin >> x;
         v.push_back(x);
+        count+=1;
     }
 
     // The user has entered as many numbers as he wanted to.  Now we need to
@@ -55,9 +62,10 @@ int main() {
     std::size_t i = 0;
     std::size_t greatest_index = 0;
     std::size_t least_index = 0;
+    std::cout << "サイズ: "<< v.size() << "\n";
     while (i < v.size()) {
         if (v[i] > v[greatest_index])
-            greatest_index = i;
+            greatest_index = i; //gratest indexを更新する
         if (v[i] < v[least_index])
             least_index = i;
         i += 1;

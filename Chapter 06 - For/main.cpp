@@ -43,12 +43,17 @@
 #include <vector>
 
 int main() {
-    int x;
+    int x, count=0;
     std::vector<int> v;
 
     std::cout << "Enter as many numbers as you want:\n";
-    while (std::cin >> x)
+    while (count < 5){
+        std::cin >> x;
         v.push_back(x);
+        count += 1;
+
+    }
+
 
     if (v.empty()) {
         std::cout << "An empty sequence has no greatest or least element.\n";
